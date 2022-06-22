@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/UI/ItemSlots/CookPanelItemSlot/CookPanelItemSlot.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Png/Slot.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Png/items/Fruit+.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Png/Slot_disabled.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 496, 16, 16, 16 )
+
+[node name="CookPanelItemSlot" type="TextureButton"]
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Food" type="TextureRect" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 16, 16 )
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlotDisabled" type="TextureRect" parent="."]
+visible = false
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+texture = ExtResource( 4 )
+
+[connection signal="pressed" from="." to="." method="_on_CookPanelItemSlot_pressed"]

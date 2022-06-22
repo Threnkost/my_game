@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Main/ResourceScripts/SkillData.gd" type="Script" id=1]
+[ext_resource path="res://Assets/2D/icons/effects/png/skill_icons50.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+skill_id = "cosmic_poisoning"
+texture = ExtResource( 2 )
+level = 0
+max_level = 5
+cooldown = 6
+data = {
+"damage_per_second": PoolIntArray( 0, 4, 6, 8, 10, 12 )
+}

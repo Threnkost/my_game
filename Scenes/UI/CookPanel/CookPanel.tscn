@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Themes/GeneralUITheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/UI/CookPanel/CookPanel.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/FoodSlot/FoodSlot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/ItemSlots/CookPanelItemSlot/CookPanelItemSlot.tscn" type="PackedScene" id=4]
+
+[node name="CookPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -179.0
+margin_bottom = -92.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+margin_right = 61.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slots" type="VBoxContainer" parent="Background"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 40.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 24, 24 )
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FoodSlot" parent="Background/Slots" instance=ExtResource( 3 )]
+
+[node name="FoodSlot2" parent="Background/Slots" instance=ExtResource( 3 )]
+margin_top = 40.0
+margin_bottom = 64.0
+
+[node name="FoodSlot3" parent="Background/Slots" instance=ExtResource( 3 )]
+margin_top = 80.0
+margin_bottom = 104.0
+
+[node name="Inventory" type="Panel" parent="."]
+margin_left = 88.0
+margin_right = 199.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slots" type="GridContainer" parent="Inventory"]
+margin_left = 12.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 88.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CookPanelItemSlot" parent="Inventory/Slots" instance=ExtResource( 4 )]
+
+[node name="CookPanelItemSlot2" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 28.0
+margin_right = 52.0
+
+[node name="CookPanelItemSlot3" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 56.0
+margin_right = 80.0
+
+[node name="CookPanelItemSlot4" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_top = 28.0
+margin_bottom = 52.0
+
+[node name="CookPanelItemSlot5" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 28.0
+margin_top = 28.0
+margin_right = 52.0
+margin_bottom = 52.0
+
+[node name="CookPanelItemSlot6" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 56.0
+margin_top = 28.0
+margin_right = 80.0
+margin_bottom = 52.0
+
+[node name="CookPanelItemSlot7" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_top = 56.0
+margin_bottom = 80.0
+
+[node name="CookPanelItemSlot10" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 28.0
+margin_top = 56.0
+margin_right = 52.0
+margin_bottom = 80.0
+
+[node name="CookPanelItemSlot11" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 56.0
+margin_top = 56.0
+margin_right = 80.0
+margin_bottom = 80.0
+
+[node name="CookPanelItemSlot12" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_top = 84.0
+margin_bottom = 108.0
+
+[node name="CookPanelItemSlot8" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 28.0
+margin_top = 84.0
+margin_right = 52.0
+margin_bottom = 108.0
+
+[node name="CookPanelItemSlot9" parent="Inventory/Slots" instance=ExtResource( 4 )]
+margin_left = 56.0
+margin_top = 84.0
+margin_right = 80.0
+margin_bottom = 108.0

@@ -1,0 +1,19 @@
+{
+	
+	"stone_axe":{
+		"amount":1,
+		"materials":{
+			"log":2,
+			"apple":3
+		}
+	},
+	
+	
+	"health_potion":{
+		"amount":2,
+		"materials":{
+			"apple":2
+		}
+	}
+	
+}

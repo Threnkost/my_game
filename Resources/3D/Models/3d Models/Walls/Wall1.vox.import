@@ -1,0 +1,18 @@
+[remap]
+
+importer="VoxelCore.MeshOfVoxels"
+type="Mesh"
+path="res://.import/Wall1.vox-ad01b97149a0f04343a388873fc94197.mesh"
+
+[deps]
+
+source_file="res://Resources/3D/Models/3d Models/Walls/Wall1.vox"
+dest_files=[ "res://.import/Wall1.vox-ad01b97149a0f04343a388873fc94197.mesh" ]
+
+[params]
+
+mesh_mode=1
+origin_x=0
+origin_y=0
+origin_z=0
+voxel_size=0.5

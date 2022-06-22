@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/UI/CraftingTablePanel.gd" type="Script" id=1]
+
+[node name="CraftingTablePanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 232.0
+margin_bottom = 176.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 55.0
+margin_bottom = 28.0
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Item/ItemModel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Png/items/leave_of_space.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+ID = "leave_of_space"
+TEXTURE = ExtResource( 2 )
+TYPE = "MATERIAL"
+MAX_STACK = 25
+SID = {
+}

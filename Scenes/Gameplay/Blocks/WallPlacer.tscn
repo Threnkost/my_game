@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Png/tiles/tileset1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Gameplay/Blocks/WallPlacer.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 7 )
+
+[node name="WallPlacer" type="Area2D"]
+modulate = Color( 1, 1, 1, 0.588235 )
+z_index = -4
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4.76837e-07, 2.98023e-08 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_WallPlacer_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_WallPlacer_body_exited"]

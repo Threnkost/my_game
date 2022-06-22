@@ -1,0 +1,101 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Resources/Themes/GeneralUITheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/UI/SkillTree/SkillCell/SkillCell.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/soul_breaker.tres" type="Resource" id=3]
+[ext_resource path="res://Assets/2D/icons/effects/png/skill_icons51.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/UI/SkillTree/SkillTree.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/Invisible.tres" type="Resource" id=6]
+[ext_resource path="res://Assets/2D/icons/effects/png/skill_icons20.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/QuickImpact.tres" type="Resource" id=8]
+[ext_resource path="res://Scenes/UI/SkillTreePathBar/SkillPath.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/cellular_shield.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/RavenPassive6.tres" type="Resource" id=11]
+[ext_resource path="res://Assets/2D/icons/effects/png/skill_icons52.png" type="Texture" id=12]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/RavenPassive3.tres" type="Resource" id=13]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/RavenPassive5.tres" type="Resource" id=14]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/RavenPassive4.tres" type="Resource" id=15]
+[ext_resource path="res://Resources/Skills/Evolution/Raven/dark_poison.tres" type="Resource" id=16]
+
+[node name="SkillTree" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Titles" type="TabContainer" parent="Background"]
+margin_right = 768.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.5, 0.5 )
+tab_align = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Raven" type="Tabs" parent="Background/Titles"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 26.0
+
+[node name="ActiveSkills" type="VBoxContainer" parent="Background/Titles/Raven"]
+margin_left = 16.0
+margin_top = 38.0
+margin_right = 80.0
+margin_bottom = 358.0
+custom_constants/separation = 64
+
+[node name="HighPower" parent="Background/Titles/Raven/ActiveSkills" instance=ExtResource( 2 )]
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 12 )
+skill_res = ExtResource( 8 )
+
+[node name="SoulBreaker" parent="Background/Titles/Raven/ActiveSkills" instance=ExtResource( 2 )]
+margin_top = 128.0
+margin_right = 64.0
+margin_bottom = 192.0
+texture_normal = ExtResource( 4 )
+skill_res = ExtResource( 3 )
+
+[node name="Ulti" parent="Background/Titles/Raven/ActiveSkills" instance=ExtResource( 2 )]
+margin_top = 256.0
+margin_right = 64.0
+margin_bottom = 320.0
+texture_normal = ExtResource( 7 )
+skill_res = ExtResource( 6 )
+
+[node name="Scroll" type="ScrollContainer" parent="Background/Titles/Raven"]
+margin_left = 128.0
+margin_top = 22.0
+margin_right = 496.0
+margin_bottom = 374.0
+
+[node name="Paths" type="VBoxContainer" parent="Background/Titles/Raven/Scroll"]
+margin_bottom = 128.0
+custom_constants/separation = 128
+
+[node name="Dark Hunter" parent="Background/Titles/Raven/Scroll/Paths" instance=ExtResource( 9 )]
+margin_right = 0.0
+margin_bottom = 0.0
+skills = [ ExtResource( 10 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 11 ) ]
+
+[node name="Shield Vampire" parent="Background/Titles/Raven/Scroll/Paths" instance=ExtResource( 9 )]
+margin_top = 128.0
+margin_right = 0.0
+margin_bottom = 128.0
+skills = [ ExtResource( 10 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 11 ) ]
+
+[node name="Survival" type="Tabs" parent="Background/Titles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 26.0
+
+[node name="Tween" type="Tween" parent="."]

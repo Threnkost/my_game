@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/3D/MeshLib/mesh_lib.meshlib" type="MeshLibrary" id=1]
+
+[node name="World3D" type="Spatial"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 9, 65531, 0, 10, 65531, 0, 11, 65531, 0, 12, 65531, 0, 13, 65531, 0, 9, 65532, 0, 10, 65532, 0, 11, 65532, 0, 12, 65532, 0, 13, 65532, 0, 9, 65533, 0, 10, 65533, 0, 11, 65533, 0, 12, 65533, 0, 13, 65533, 0, 9, 65534, 0, 10, 65534, 0, 11, 65534, 0, 12, 65534, 0, 13, 65534, 0 )
+}
+__meta__ = {
+"_editor_clip_": 2
+}

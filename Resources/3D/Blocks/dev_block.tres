@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Main/ResourceScripts/BlockModel.gd" type="Script" id=1]
+[ext_resource path="res://Resources/3D/Models/3d Models/Walls/Wall1.obj" type="ArrayMesh" id=2]
+
+[resource]
+script = ExtResource( 1 )
+id = "dev_block"
+mesh = ExtResource( 2 )

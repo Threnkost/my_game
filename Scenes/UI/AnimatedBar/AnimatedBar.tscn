@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Png/other/texture_progress.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/UI/AnimatedBar/AnimatedBar.gd" type="Script" id=2]
+
+[node name="AnimatedBar" type="TextureProgress"]
+margin_right = 60.0
+margin_bottom = 9.0
+value = 50.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 0.533333, 0.341176, 0.411765, 1 )
+tint_progress = Color( 0.945098, 0.4, 0.372549, 1 )
+nine_patch_stretch = true
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]

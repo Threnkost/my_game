@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/UI/CraftingPanel/CraftingPanel.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Themes/GeneralUITheme.tres" type="Theme" id=2]
+[ext_resource path="res://Scenes/UI/CraftingCell/CraftingCell.tscn" type="PackedScene" id=3]
+
+[node name="CraftingPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+crafting_cell_scene = ExtResource( 3 )
+crafting_recipes_as_file = "res://JSON/crafting_recipes.json"
+
+[node name="Background" type="Panel" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 232.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scroll" type="ScrollContainer" parent="Background"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 168.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="VBoxContainer" parent="Background/Scroll"]
+
+[node name="Title1" type="Label" parent="Background"]
+margin_left = 96.0
+margin_top = 40.0
+margin_right = 254.0
+margin_bottom = 56.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Requested Materials:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RequstedMaterials" type="GridContainer" parent="Background"]
+margin_left = 96.0
+margin_top = 48.0
+margin_right = 216.0
+margin_bottom = 120.0
+custom_constants/vseparation = 6
+custom_constants/hseparation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CraftButton" type="Button" parent="Background"]
+margin_left = 96.0
+margin_top = 128.0
+margin_right = 336.0
+margin_bottom = 150.0
+rect_scale = Vector2( 0.5, 0.5 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Craft"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="Background"]
+margin_left = 96.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 16, 16 )
+
+[connection signal="pressed" from="Background/CraftButton" to="." method="_on_CraftButton_pressed"]

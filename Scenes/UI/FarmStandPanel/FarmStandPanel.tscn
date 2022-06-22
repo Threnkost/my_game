@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/UI/FarmStandPanel/FarmStandPanel.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/UI/FarmStandCell/FarmStandCell.tscn" type="PackedScene" id=2]
+
+[node name="FarmStandPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -160.0
+margin_bottom = -137.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+margin_right = 80.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cells" type="HBoxContainer" parent="Background"]
+margin_right = 80.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FarmStandCell" parent="Background/Cells" instance=ExtResource( 2 )]
+margin_left = 2.0
+margin_right = 18.0
+
+[node name="FarmStandCell2" parent="Background/Cells" instance=ExtResource( 2 )]
+margin_left = 22.0
+margin_right = 38.0
+
+[node name="FarmStandCell3" parent="Background/Cells" instance=ExtResource( 2 )]
+margin_left = 42.0
+margin_right = 58.0
+
+[node name="FarmStandCell4" parent="Background/Cells" instance=ExtResource( 2 )]
+margin_left = 62.0
+margin_right = 78.0

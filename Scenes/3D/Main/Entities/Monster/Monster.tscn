@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/2D/entities/monster1/monster.png" type="Texture" id=1]
+
+[node name="KinematicBody" type="KinematicBody"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource( 1 )

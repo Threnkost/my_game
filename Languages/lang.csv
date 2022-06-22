@@ -1,0 +1,15 @@
+keys,tr,en
+{on_load},Dil secenegi yuklendi!,Loaded localization.
+{woodpecker_name},Agac Kakan,Woodpecker
+{woodpecker_description},Agaclara verilen hasar artar.,Increases damage to trees.
+{wood_looting_name},Agac Ganimeti,Wood Looting
+{wood_looting_description},Agac kestiginde daha fazla odun toplarsin.,You get more logs when you cut a tree.
+{stone_axe_name},Tas Balta,Stone Axe
+{stone_axe_description},Agac kesmek icin guzel bir esya.,A nice item to chop trees.
+,,
+{apple_name},Elma,Apple
+{apple_description},Lezzetli bir uzay elmasi.,"Yumm, looks sweety."
+{green_pepper_name},Yesil Biber,Green Pepper
+{green_pepper_description},"Aman ha, aci olabilir!",It can be hot...
+{roasted_green_pepper_name},Kozlenmis Yesil Biber,Roasted Yesil Biber
+{roasted_green_pepper_description},Lezzetli!,Tasty!

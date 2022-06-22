@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/3D/Main/BlockModel/BlockBody.gd" type="Script" id=1]
+[ext_resource path="res://Resources/3D/Blocks/test_block.tres" type="Resource" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 6, 1.6, 0.075 )
+
+[node name="BlockBody" type="Spatial"]
+script = ExtResource( 1 )
+valid_block_data = ExtResource( 2 )
+
+[node name="Model" type="MeshInstance" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Model"]
+transform = Transform( 1.32764, 0, 0, 0, 1.08605, 0, 0, 0, 2.1214, 0, 0, 0.204402 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Model/StaticBody"]
+transform = Transform( 0.098808, 0, 0, 0, 0.192424, 0, 0, 0, 4.35822, 0, 0.469882, -0.0978502 )
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+aabb = AABB( -0.05, 0, -0.05, 0.1, 0.1, 0.1 )
+
+[connection signal="screen_entered" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]

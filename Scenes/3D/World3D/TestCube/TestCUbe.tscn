@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/3D/World3D/TestCube/TestCUbe.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.170628, 0.0571795, 0.0864828 )
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.268385, 0.0838157, 0.264003 )
+
+[node name="KinematicBody" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.226051, 0, 0, 0, 0.418069, 0, 0, 0, 0.534193, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Area" type="Area" parent="."]
+visible = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

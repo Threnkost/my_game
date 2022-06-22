@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Main/LevelScene/LevelScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Core/World.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/UI/UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/ESCMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI/CraftingPanel/CraftingPanel.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/UI/SkillTree/SkillTree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/UI/AttributesPanel/AttributesPanel.tscn" type="PackedScene" id=12]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+initial_level = NodePath("Levels/Level")
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level" parent="Levels" instance=ExtResource( 2 )]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="UI" instance=ExtResource( 6 )]
+
+[node name="Panel" parent="UI" instance=ExtResource( 12 )]
+visible = false
+
+[node name="CraftingPanel" parent="UI" instance=ExtResource( 9 )]
+visible = false
+
+[node name="Inventory" parent="UI" instance=ExtResource( 3 )]
+visible = false
+mouse_filter = 2
+
+[node name="SkillTree" parent="UI" instance=ExtResource( 11 )]
+visible = false
+
+[node name="ESCMenu" parent="UI" instance=ExtResource( 7 )]
+visible = false
+
+[connection signal="map_is_ready" from="." to="." method="_on_World_map_is_ready"]

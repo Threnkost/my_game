@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Icons/UI/MouseRight.tres" type="Texture" id=1]
+[ext_resource path="res://Assets/Icons/UI/Mouse.tres" type="Texture" id=2]
+[ext_resource path="res://Assets/Icons/UI/MouseLeft.tres" type="Texture" id=3]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "MouseLeftIndicator",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "MouseRightIndicator",
+"speed": 5.0
+} ]

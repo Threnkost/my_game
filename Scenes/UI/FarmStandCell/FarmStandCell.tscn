@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/UI/FarmStandCell/FarmStandCell.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Png/other/texture_progress.png" type="Texture" id=2]
+
+[node name="FarmStandCell" type="TextureButton"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_top = 16.0
+margin_right = 16.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 16, 2 )
+value = 50.0
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true

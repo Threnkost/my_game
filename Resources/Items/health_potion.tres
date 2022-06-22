@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Item/ItemModel.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Png/items/temp.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Item/ItemActions/HealthPotionAction.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 16, 16, 16 )
+
+[resource]
+script = ExtResource( 1 )
+ID = "health_potion"
+TEXTURE = SubResource( 1 )
+TYPE = "CONSUMABLE"
+MAX_STACK = 25
+ITEM_ACTION = ExtResource( 3 )
+SID = {
+"heal_amount": 15
+}
